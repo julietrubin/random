@@ -1,4 +1,5 @@
 /**
+ * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
@@ -14,7 +15,6 @@
  
 
 var lowestCommonAncestor = function(root, p, q) {
-    var current = root;
     var ancestorsP = findAncestors(root, p, []);
     var ancestorsQ = findAncestors(root, q, []);
     if (ancestorsP.length === 0 || ancestorsQ.length === 0){
@@ -27,8 +27,7 @@ var lowestCommonAncestor = function(root, p, q) {
         lca = ancestorsP[i];
 				i++;
     }
-    return lca;
-    
+    return lca; 
 };
 
 var findAncestors = function(root, p){
